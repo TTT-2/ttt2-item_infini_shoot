@@ -83,14 +83,14 @@ if SERVER then
     end
 
     hook.Add('EntityFireBullets', 'ttt2_infinishoot_handle_fired_bullet', function(ply, data)
-        if not ply or not ply:IsPlayer() or not ply:IsTerror() then return end
+        if not ply or not ply:IsPlayer() then return end
         if not ply:HasEquipmentItem('item_ttt_infinishoot') then return end
 
         UpdateWeapon(ply:GetActiveWeapon())
     end)
 
     hook.Add('PlayerSwitchWeapon', 'ttt2_infinishoot_handle_weapon_change', function(ply, old_wep, new_wep)
-        if not ply or not ply:IsPlayer() or not ply:IsTerror() then return end
+        if not ply or not ply:IsPlayer() then return end
         if not ply:HasEquipmentItem('item_ttt_infinishoot') then return end
 
         ResetWeapon(old_wep)
@@ -98,7 +98,7 @@ if SERVER then
     end)
 
     hook.Add('PlayerDroppedWeapon', 'ttt2_infinishoot_handle_weapon_drop', function(ply, wep)
-        if not ply or not ply:IsPlayer() or not ply:IsTerror() then return end
+        if not ply or not ply:IsPlayer() then return end
         if not ply:HasEquipmentItem('item_ttt_infinishoot') then return end
 
         ResetWeapon(wep)
