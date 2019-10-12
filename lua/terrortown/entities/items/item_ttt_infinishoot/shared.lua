@@ -18,9 +18,9 @@ if CLIENT then
 end
 
 ITEM.EquipMenuData = {
-	type = 'item_passive',
-	name = 'item_infini_shoot',
-	desc = 'item_infini_shoot_desc'
+    type = 'item_passive',
+    name = 'item_infini_shoot',
+    desc = 'item_infini_shoot_desc'
 }
 
 ITEM.material = 'vgui/ttt/icon_infinishoot'
@@ -37,6 +37,7 @@ if SERVER then
         if wep.Kind == WEAPON_NADE then
             return false
         end
+
         -- special case for reset since the following checks do not work when the weapon is dropped
         if is_reset then
             return true
@@ -54,7 +55,7 @@ if SERVER then
         if not IsValidWeapon(wep) then return end
 
         wep.inf_clip_old = wep:Clip1()
-        wep:SetClip1(250)
+        wep:SetClip1(wep:GetMaxClip1())
     end
 
     local function ResetWeapon(wep)
@@ -69,7 +70,7 @@ if SERVER then
     local function UpdateWeapon(wep)
         if not IsValidWeapon(wep) then return end
 
-        wep:SetClip1(251) --+1 since it is decreased instantly
+        wep:SetClip1(wep:GetMaxClip1() + 1) --+1 since it is decreased instantly
     end
 
     -- WEAPON HOOKS
