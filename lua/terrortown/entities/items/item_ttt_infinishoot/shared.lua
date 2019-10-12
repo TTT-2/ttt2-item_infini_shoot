@@ -9,7 +9,7 @@ if CLIENT then
     hook.Add('Initialize', 'ttt2_infinishoot_init_lang', function()
         -- ENGLISH
         LANG.AddToLanguage('English', 'item_infini_shoot', 'Infini Shoot')
-        LANG.AddToLanguage('English', 'item_infini_shoot_desc', 'With the help of this perk you never have to reload your weapon!')
+        LANG.AddToLanguage('English', 'item_infini_shoot_desc', 'With the help of this perk you never have to reload your weapon again!')
         
         -- DEUTSCH
         LANG.AddToLanguage('Deutsch', 'item_infini_shoot', 'Infini Shoot')
