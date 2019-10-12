@@ -28,15 +28,18 @@ ITEM.CanBuy = {ROLE_TRAITOR, ROLE_DETECTIVE}
 ITEM.hud = Material('vgui/ttt/hud_icon_infinishoot.png')
 
 if SERVER then
-    local function IsValidWeapon(wep)
+    local function IsValidWeapon(wep, is_reset)
         -- no weapon defined
         if not wep then
             return false
         end
-
         -- prevent grenades
         if wep.Kind == WEAPON_NADE then
             return false
+        end
+        -- special case for reset since the following checks do not work when the weapon is dropped
+        if is_reset then
+            return true
         end
 
         -- prevent most op weapons
@@ -55,7 +58,7 @@ if SERVER then
     end
 
     local function ResetWeapon(wep)
-        if not IsValidWeapon(wep) then return end
+        if not IsValidWeapon(wep, true) then return end
 
         if not wep.inf_clip_old then return end
 
