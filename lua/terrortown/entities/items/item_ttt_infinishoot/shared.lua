@@ -34,8 +34,13 @@ if SERVER then
             return false
         end
 
+        -- prevent grenades
+        if wep.Kind == WEAPON_NADE then
+            return false
+        end
+
         -- prevent most op weapons
-        if not wep:HasAmmo or not wep:HasAmmo() or not wep.AutoSpawnable or (wep.Kind == WEAPON_EQUIP1 or wep.Kind == WEAPON_EQUIP2) then
+        if not wep.HasAmmo or not wep:HasAmmo() or not wep.AutoSpawnable or (wep.Kind == WEAPON_EQUIP1 or wep.Kind == WEAPON_EQUIP2) then
             return false
         end
 
