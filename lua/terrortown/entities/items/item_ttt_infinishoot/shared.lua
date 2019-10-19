@@ -103,4 +103,12 @@ if SERVER then
 
         ResetWeapon(wep)
     end)
+
+    hook.Add('TTT2DropAmmo', 'ttt2_infinishoot_handle_ammo_drop', function(ply, hook_data)
+        if not ply or not ply:IsPlayer() then return end
+        if not ply:HasEquipmentItem('item_ttt_infinishoot') then return end
+
+        -- do not allow ammo drop when this item is used
+        return false
+    end)
 end
