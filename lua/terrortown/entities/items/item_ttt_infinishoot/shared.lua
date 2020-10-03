@@ -14,6 +14,10 @@ if CLIENT then
 		-- DEUTSCH
 		LANG.AddToLanguage('Deutsch', 'item_infini_shoot', 'Infini Shoot')
 		LANG.AddToLanguage('Deutsch', 'item_infini_shoot_desc', 'Mit Hilfe dieses Perks musst du deine Waffen nie wieder nachladen!')
+		
+		-- RUSSIAN
+		LANG.AddToLanguage('Русский', 'item_infini_shoot', 'Бесконечнострел')
+		LANG.AddToLanguage('Русский', 'item_infini_shoot_desc', 'С помощью этого умения вам больше никогда не придётся перезаряжать оружие!')
 	end)
 end
 
