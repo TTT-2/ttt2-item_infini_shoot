@@ -5,22 +5,6 @@ if SERVER then
 	resource.AddFile('materials/vgui/ttt/hud_icon_infinishoot.png')
 end
 
-if CLIENT then
-	hook.Add('Initialize', 'ttt2_infinishoot_init_lang', function()
-		-- ENGLISH
-		LANG.AddToLanguage('English', 'item_infini_shoot', 'Infini Shoot')
-		LANG.AddToLanguage('English', 'item_infini_shoot_desc', 'With the help of this perk you never have to reload your weapon again!')
-
-		-- DEUTSCH
-		LANG.AddToLanguage('Deutsch', 'item_infini_shoot', 'Infini Shoot')
-		LANG.AddToLanguage('Deutsch', 'item_infini_shoot_desc', 'Mit Hilfe dieses Perks musst du deine Waffen nie wieder nachladen!')
-		
-		-- RUSSIAN
-		LANG.AddToLanguage('Русский', 'item_infini_shoot', 'Бесконечнострел')
-		LANG.AddToLanguage('Русский', 'item_infini_shoot_desc', 'С помощью этого умения вам больше никогда не придётся перезаряжать оружие!')
-	end)
-end
-
 ITEM.EquipMenuData = {
 	type = 'item_passive',
 	name = 'item_infini_shoot',
