@@ -70,7 +70,7 @@ if SERVER then
 		ResetWeapon(buyer:GetActiveWeapon())
 	end
 
-	hook.Add('EntityFireBullets', 'ttt2_infinishoot_handle_fired_bullet', function(ply, data)
+	hook.Add('PostEntityFireBullets', 'ttt2_infinishoot_handle_fired_bullet', function(ply, data)
 		if not ply or not ply:IsPlayer() then return end
 		if not ply:HasEquipmentItem('item_ttt_infinishoot') then return end
 
